@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GDrive Clone — Frontend-only (IndexedDB)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">GD</div>
+      <div>
+        <h1>Google Drive — Frontend (IndexedDB)</h1>
+        <p class="lead">Upload, store and download files locally in your browser. No backend needed — good for prototyping & demos.</p>
+      </div>
+    </header>
+
+    <div class="card" id="app">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <div class="meta" style="margin-bottom:6px">
+            <div class="pill" id="total-files">Files: 0</div>
+            <div class="pill" id="total-size">Used: 0 KB</div>
+          </div>
+
+          <div class="upload-row">
+            <label class="dropzone" id="dropzone">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="opacity:0.9">
+                <path d="M12 3v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 16.5A4.5 4.5 0 0 0 15.5 12H8.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div style="margin-left:8px">
+                <div style="font-weight:700">Drag & drop files</div>
+                <div class="small">or click to choose files (multiple supported)</div>
+              </div>
+            </label>
+
+            <input type="file" id="file-input" class="file-input" multiple>
+
+            <div style="display:flex;gap:8px;align-items:center">
+              <button id="choose-btn" class="btn">Choose</button>
+              <button id="clear-btn" class="btn" title="Delete all files">Clear all</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="width:340px;min-width:220px">
+          <div class="searchbar">
+            <input id="search" placeholder="Search files by name..." />
+            <button id="refresh-btn" class="btn ghost">Refresh</button>
+            <button id="upload-btn" class="btn primary">Upload</button>
+          </div>
+          <div style="margin-top:10px" class="small">Tip: files stay in this browser & device only. Use download to export.</div>
+        </div>
+      </div>
+
+      <div id="list-area">
+        <table class="files-table" id="files-table" aria-live="polite">
+          <thead>
+            <tr><th>Name</th><th>Size</th><th>Type</th><th>Uploaded</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="files-body">
+            <tr><td colspan="5" class="empty">No files yet — add some using Upload or drag & drop.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
