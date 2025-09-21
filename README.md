@@ -10,7 +10,7 @@ Supports:
 - 📥 Download
 - 🗑️ Delete
 
-> ⚠️ This is a **frontend-only** project.  
+>  This is a **frontend-only** project.  
 
 ---
 
