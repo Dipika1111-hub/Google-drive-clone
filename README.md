@@ -10,8 +10,7 @@ Supports:
 - 📥 Download
 - 🗑️ Delete
 
-## Screenshot
-![Google Drive Clone Live Server](assets/screenshot.png)
+
 
 >  This is a **frontend-only** project.  
 
